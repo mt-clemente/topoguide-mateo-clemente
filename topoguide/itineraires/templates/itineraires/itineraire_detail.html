@@ -76,8 +76,8 @@
               <div class="pt-2 ">Date: {{sortie.date_sortie}}</div>
               <div class="pt-2 ">Niveau: {{sortie.get_experience_display}}</div>
               <div class="row pt-2 d-flex justify-content-evenly">
-                <a class="btn btn-outline-warning col-5 {% if user != sortie.randonneur %}disabled{% endif %}" href={% url 'itineraires:modification_sortie' sortie.id%} role="button"  >Modifier</a>
-                <a class="btn btn-outline-danger col-5 {% if user != sortie.randonneur %}disabled{% endif %}" href={% url 'itineraires:suppression_sortie' sortie.id%} role="button"  >Delete</a>
+                <a class="btn btn-outline-warning col-5 {% if user != sortie.randonneur and user.is_authenticated %}disabled{% endif %}" href={% url 'itineraires:modification_sortie' sortie.id%} role="button"  >Modifier</a>
+                <a class="btn btn-outline-danger col-5 {% if user != sortie.randonneur and user.is_authenticated %}disabled{% endif %}" href={% url 'itineraires:suppression_sortie' sortie.id%} role="button"  >Delete</a>
                 
               </div>
             </div>
@@ -91,8 +91,8 @@
             <div class="col-1 pt-2 ">{{sortie.duree}}h</div>
             <div class="col-1 pt-2 ">{{sortie.difficulte}}</div>
             <div class="row col-4 pt-2 d-flex justify-content-evenly">
-              <a class="btn btn-outline-warning col-4 pl-2 {% if user != sortie.randonneur %}disabled{% endif %}" href={% url 'itineraires:modification_sortie' sortie.id%} role="button"  >Modifier</a>
-              <a class="btn btn-outline-danger col-4 pl-2 {% if user != sortie.randonneur %}disabled{% endif %}" href={% url 'itineraires:suppression_sortie' sortie.id%} role="button"  >Delete</a>
+              <a class="btn btn-outline-warning col-4 pl-2 {% if user != sortie.randonneur and user.is_authenticated %}disabled{% endif %}" href={% url 'itineraires:modification_sortie' sortie.id%} role="button"  >Modifier</a>
+              <a class="btn btn-outline-danger col-4 pl-2 {% if user != sortie.randonneur and user.is_authenticated %}disabled{% endif %}" href={% url 'itineraires:suppression_sortie' sortie.id%} role="button"  >Delete</a>
             </div>
           </div>
         
